@@ -13,8 +13,8 @@ const Tab = createBottomTabNavigator();
 function MainTabs() {
   return (
     <Tab.Navigator>
-      <Tab.Screen name="Haku" component={SearchScreen} />
-      <Tab.Screen name="Oma Treeni" component={RoutineScreen} />
+      <Tab.Screen name="Search" component={SearchScreen} />
+      <Tab.Screen name="My Routine" component={RoutineScreen} />
     </Tab.Navigator>
   );
 }
@@ -36,7 +36,7 @@ export default function App() {
         <Stack.Screen
           name="ExerciseDetails"
           component={ExerciseDetailsScreen}
-          options={{ title: "Liikkeen tiedot" }}
+          options={{ title: "Exercise Details" }}
         />
       </Stack.Navigator>
     </NavigationContainer>

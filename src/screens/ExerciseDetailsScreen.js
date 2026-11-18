@@ -1,9 +1,15 @@
-import { View, Text } from 'react-native';
+import { ScrollView, Text } from "react-native";
 
-export default function EcerciseDetailsScreen() {
+export default function ExerciseDetailsScreen({ route }) {
+  const { exercise } = route.params;
+
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Login Screen</Text>
-    </View>
+    <ScrollView style={{ flex: 1, padding: 20 }}>
+      <Text style={{ fontSize: 22, fontWeight: "bold" }}>{exercise.name}</Text>
+      <Text style={{ fontSize: 16, marginVertical: 10 }}>
+        {exercise.category}
+      </Text>
+      <Text>{exercise.description || "No description available."}</Text>
+    </ScrollView>
   );
 }

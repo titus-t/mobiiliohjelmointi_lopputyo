@@ -3,7 +3,7 @@ import { Text, View } from "react-native";
 export default function RoutineScreen() {
   return (
     <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text>Login Screen</Text>
+      <Text>My workouts</Text>
     </View>
   );
 }
