@@ -14,7 +14,7 @@ FITT allows you to search for workout exercises by name and save them to your ow
 
 ## Technologies
 
-- [React Native](https://reactnative.dev/) and [Expo](https://expo.dev/) (SDK 57)
+- [React Native](https://reactnative.dev/) and [Expo](https://expo.dev/) (SDK 58)
 - [React Navigation](https://reactnavigation.org/): native stack and bottom tabs
 - [Firebase Authentication](https://firebase.google.com/docs/auth): email and password login
 - [Cloud Firestore](https://firebase.google.com/docs/firestore): stores each user's routine
