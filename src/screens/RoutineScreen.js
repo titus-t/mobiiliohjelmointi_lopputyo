@@ -50,15 +50,23 @@ export default function RoutineScreen() {
               flexDirection: "row",
               justifyContent: "space-between",
               alignItems: "center",
-              paddingVertical: 10,
+              paddingVertical: 12,
+              borderBottomWidth: 1,
+              borderBottomColor: "#eee",
             }}
           >
             <View style={{ flex: 1, marginRight: 10 }}>
-              <Text style={{ fontWeight: "bold" }}>{item.name}</Text>
-              <Text>{item.category}</Text>
+              <Text style={{ fontWeight: "bold", fontSize: 16 }}>
+                {item.name}
+              </Text>
+              <Text style={{ color: "#666", marginTop: 2 }}>
+                {item.category}
+              </Text>
             </View>
             <TouchableOpacity onPress={() => handleDelete(item.id)}>
-              <Text style={{ color: "red", fontWeight: "bold" }}>Remove</Text>
+              <Text style={{ color: "#dc3545", fontWeight: "bold" }}>
+                Remove
+              </Text>
             </TouchableOpacity>
           </View>
         )}

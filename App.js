@@ -2,6 +2,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
+import { Ionicons } from "@expo/vector-icons";
 import ExerciseDetailsScreen from "./src/screens/ExerciseDetailsScreen";
 import LoginScreen from "./src/screens/LoginScreen";
 import ProfileScreen from "./src/screens/ProfileScreen";
@@ -14,9 +15,33 @@ const Tab = createBottomTabNavigator();
 function MainTabs() {
   return (
     <Tab.Navigator>
-      <Tab.Screen name="Search" component={SearchScreen} />
-      <Tab.Screen name="My Routine" component={RoutineScreen} />
-      <Tab.Screen name="Profile" component={ProfileScreen} />
+      <Tab.Screen
+        name="Search"
+        component={SearchScreen}
+        options={{
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="search" size={size} color={color} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="My Routine"
+        component={RoutineScreen}
+        options={{
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="barbell" size={size} color={color} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Profile"
+        component={ProfileScreen}
+        options={{
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="person" size={size} color={color} />
+          ),
+        }}
+      />
     </Tab.Navigator>
   );
 }
@@ -38,7 +63,10 @@ export default function App() {
         <Stack.Screen
           name="ExerciseDetails"
           component={ExerciseDetailsScreen}
-          options={{ title: "Exercise Details" }}
+          options={{
+            title: "Exercise Details",
+            headerBackTitle: "Back",
+          }}
         />
       </Stack.Navigator>
     </NavigationContainer>

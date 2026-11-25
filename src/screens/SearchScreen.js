@@ -58,6 +58,14 @@ export default function SearchScreen({ navigation }) {
         value={query}
         onChangeText={setQuery}
         autoCapitalize="none"
+        style={{
+          borderWidth: 1,
+          borderColor: "#ccc",
+          borderRadius: 8,
+          padding: 12,
+          marginBottom: 15,
+          backgroundColor: "#fff",
+        }}
       />
 
       {loading ? (
@@ -69,13 +77,21 @@ export default function SearchScreen({ navigation }) {
           ListEmptyComponent={<Text>No exercises found.</Text>}
           renderItem={({ item }) => (
             <TouchableOpacity
-              style={{ paddingVertical: 10 }}
+              style={{
+                paddingVertical: 12,
+                borderBottomWidth: 1,
+                borderBottomColor: "#eee",
+              }}
               onPress={() =>
                 navigation.navigate("ExerciseDetails", { exercise: item })
               }
             >
-              <Text style={{ fontWeight: "bold" }}>{item.name}</Text>
-              <Text>{item.category}</Text>
+              <Text style={{ fontWeight: "bold", fontSize: 16 }}>
+                {item.name}
+              </Text>
+              <Text style={{ color: "#666", marginTop: 2 }}>
+                {item.category}
+              </Text>
             </TouchableOpacity>
           )}
         />
