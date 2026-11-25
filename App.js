@@ -25,7 +25,7 @@ function MainTabs() {
         }}
       />
       <Tab.Screen
-        name="My Routine"
+        name="My Exercises"
         component={RoutineScreen}
         options={{
           tabBarIcon: ({ color, size }) => (

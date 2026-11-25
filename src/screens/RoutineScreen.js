@@ -45,7 +45,7 @@ export default function RoutineScreen() {
       <FlatList
         data={routine}
         keyExtractor={(item) => item.id}
-        ListEmptyComponent={<Text>No exercises in your routine yet.</Text>}
+        ListEmptyComponent={<Text>No exercises yet.</Text>}
         renderItem={({ item }) => (
           <View
             style={{

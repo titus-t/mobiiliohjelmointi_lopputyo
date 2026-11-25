@@ -19,7 +19,7 @@ export default function ExerciseDetailsScreen({ route }) {
         );
         Alert.alert(
           "Already Added",
-          "This exercise is already in your routine.",
+          "This exercise is already in your exercises.",
         );
         return;
       }
@@ -30,7 +30,7 @@ export default function ExerciseDetailsScreen({ route }) {
         category: exercise.category,
       });
       await Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
-      Alert.alert("Added", "Exercise added to your routine.");
+      Alert.alert("Added", "Exercise added.");
     } catch (error) {
       Alert.alert("Error", "Could not save exercise.");
     }
@@ -57,7 +57,7 @@ export default function ExerciseDetailsScreen({ route }) {
         onPress={handleAddToRoutine}
       >
         <Text style={{ color: "#fff", fontWeight: "bold", fontSize: 16 }}>
-          Add to Routine
+          Add to exercises
         </Text>
       </TouchableOpacity>
     </ScrollView>
