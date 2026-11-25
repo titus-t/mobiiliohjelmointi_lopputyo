@@ -22,6 +22,10 @@ FITT allows you to search for workout exercises by name and save them to your ow
 - [expo-haptics](https://docs.expo.dev/versions/latest/sdk/haptics/): vibration feedback
 - [@expo/vector-icons](https://icons.expo.fyi/): tab bar icons (Ionicons)
 
+## Security
+
+Access to data is controlled with Firestore Security Rules, so that a user can only read, create and delete their own routine exercises. Updating documents is not allowed, and all other collections are denied by default.
+
 ## Getting started
 
 Requirements: [Node.js](https://nodejs.org/) and the Expo Go app on your phone, or an iOS simulator / Android emulator.
