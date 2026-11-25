@@ -55,6 +55,7 @@ export default function SearchScreen({ navigation }) {
     <View style={{ flex: 1, padding: 20 }}>
       <TextInput
         placeholder="Search exercises..."
+        placeholderTextColor="#888"
         value={query}
         onChangeText={setQuery}
         autoCapitalize="none"
