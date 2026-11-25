@@ -1,3 +1,4 @@
+import * as Haptics from "expo-haptics";
 import { addDoc, collection, getDocs, query, where } from "firebase/firestore";
 import { Alert, ScrollView, Text, TouchableOpacity } from "react-native";
 import { auth, db } from "../firebaseConfig";
@@ -13,6 +14,9 @@ export default function ExerciseDetailsScreen({ route }) {
       const existing = await getDocs(q);
 
       if (!existing.empty) {
+        await Haptics.notificationAsync(
+          Haptics.NotificationFeedbackType.Warning,
+        );
         Alert.alert(
           "Already Added",
           "This exercise is already in your routine.",
@@ -25,6 +29,7 @@ export default function ExerciseDetailsScreen({ route }) {
         name: exercise.name,
         category: exercise.category,
       });
+      await Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
       Alert.alert("Added", "Exercise added to your routine.");
     } catch (error) {
       Alert.alert("Error", "Could not save exercise.");

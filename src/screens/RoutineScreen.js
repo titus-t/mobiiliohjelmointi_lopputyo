@@ -1,3 +1,4 @@
+import * as Haptics from "expo-haptics";
 import { useEffect, useState } from "react";
 import { auth, db } from "../firebaseConfig";
 
@@ -33,6 +34,7 @@ export default function RoutineScreen() {
   const handleDelete = async (id) => {
     try {
       await deleteDoc(doc(db, "routines", id));
+      await Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
     } catch (error) {
       Alert.alert("Error", "Could not remove exercise.");
     }
