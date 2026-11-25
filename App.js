@@ -4,6 +4,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import ExerciseDetailsScreen from "./src/screens/ExerciseDetailsScreen";
 import LoginScreen from "./src/screens/LoginScreen";
+import ProfileScreen from "./src/screens/ProfileScreen";
 import RoutineScreen from "./src/screens/RoutineScreen";
 import SearchScreen from "./src/screens/SearchScreen";
 
@@ -15,6 +16,7 @@ function MainTabs() {
     <Tab.Navigator>
       <Tab.Screen name="Search" component={SearchScreen} />
       <Tab.Screen name="My Routine" component={RoutineScreen} />
+      <Tab.Screen name="Profile" component={ProfileScreen} />
     </Tab.Navigator>
   );
 }
