@@ -1,10 +1,25 @@
-import { addDoc, collection } from "firebase/firestore";
+import { addDoc, collection, getDocs, query, where } from "firebase/firestore";
 import { Alert, ScrollView, Text, TouchableOpacity } from "react-native";
 import { auth, db } from "../firebaseConfig";
 export default function ExerciseDetailsScreen({ route }) {
   const { exercise } = route.params;
   const handleAddToRoutine = async () => {
     try {
+      const q = query(
+        collection(db, "routines"),
+        where("userId", "==", auth.currentUser.uid),
+        where("name", "==", exercise.name),
+      );
+      const existing = await getDocs(q);
+
+      if (!existing.empty) {
+        Alert.alert(
+          "Already Added",
+          "This exercise is already in your routine.",
+        );
+        return;
+      }
+
       await addDoc(collection(db, "routines"), {
         userId: auth.currentUser.uid,
         name: exercise.name,
